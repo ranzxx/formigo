@@ -20,3 +20,7 @@ export const EditProjectSchema = z.object({
   name: z.string().min(2, "Name must be 2 characters").max(50),
   domain: z.string().url("Invalid domain").optional().or(z.literal("")),
 });
+
+export const profileSchema = z.object({
+  name: z.string().min(2, "nama minimal 2 karakter"),
+});

@@ -99,7 +99,7 @@ export const feedback = pgTable(
   {
     id: uuid("id").primaryKey().defaultRandom(),
     message: text("message").notNull(),
-    rating: integer("rating"),
+    rating: integer("rating"), 
     projectId: uuid("project_id")
       .notNull()
       .references(() => project.id, { onDelete: "cascade" }),

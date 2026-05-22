@@ -5,4 +5,4 @@ export default function DashboardPage() {
       <p className="text-muted-foreground">Welcome to Formigo</p>
     </div>
   );
-}
+} 

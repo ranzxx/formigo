@@ -37,7 +37,7 @@ export default function FeedbackDemo() {
             key={i}
             className="flex items-start gap-3 bg-background border border-border rounded-lg px-4 py-3"
           >
-            <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-1.5 shrink-0" />
+            <div className="w-1.5 h-1.5 rounded-full bg-foreground mt-1.5 shrink-0" />
             <div>
               <p className="text-sm text-foreground">{item.msg}</p>
               <p className="text-xs text-muted-foreground mt-0.5">

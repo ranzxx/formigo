@@ -15,7 +15,7 @@ export function useAuth() {
           toast.error(ctx.error.message);
         },
         onSuccess: () => {
-          toast.success("welcome back");
+          toast.success("Please check your email!");
           router.push("/dashboard");
         },
       },

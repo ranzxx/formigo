@@ -25,13 +25,16 @@ export default async function LandingPage() {
     <main>
       {/* Hero */}
       <section className="px-8 py-20 text-center max-w-2xl mx-auto">
-        <div className="inline-flex items-center gap-2 text-xs text-emerald-600 bg-emerald-50 dark:bg-emerald-950 px-3 py-1.5 rounded-full mb-6">
+        <div className="inline-flex items-center gap-2 text-xs px-3 py-1.5 rounded-full mb-6">
           realtime feedback, zero setup
         </div>
         <h1 className="text-4xl font-medium leading-tight tracking-tight mb-4">
           collect user feedback
           <br />
-          in <span className="text-emerald-600">one line of code</span>
+          in{" "}
+          <span className="text-foreground font-semibold">
+            one line of code
+          </span>
         </h1>
         <p className="text-muted-foreground text-base leading-relaxed mb-8 max-w-md mx-auto">
           Drop a script tag. Get a beautiful feedback widget. See responses in

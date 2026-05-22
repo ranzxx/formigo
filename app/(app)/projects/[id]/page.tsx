@@ -32,9 +32,6 @@ export default async function ProjectDetailPage({
         </div>
         <div className="flex gap-2">
           <Button asChild variant="outline">
-            <Link href={`/projects/${id}/settings`}>Settings</Link>
-          </Button>
-          <Button asChild variant="outline">
             <Link href={`/projects/${id}/edit`}>Edit</Link>
           </Button>
           <DeleteProjectButton id={id} />
