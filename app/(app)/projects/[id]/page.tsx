@@ -7,6 +7,7 @@ import FeedbackList from "./feedback-list";
 import { db } from "@/db/drizzle";
 import { feedback } from "@/db/schema";
 import { eq } from "drizzle-orm";
+import { CodeBlock } from "@/components/dashboard/code-block";
 
 interface ProjectDetailPageProps {
   params: Promise<{ id: string }>;
@@ -36,6 +37,16 @@ export default async function ProjectDetailPage({
           </Button>
           <DeleteProjectButton id={id} />
         </div>
+      </div>
+
+      <div className="space-y-4">
+        <div className="space-y-2">
+          <h1 className="text-2xl font-semibold">Embed</h1>
+          <p className="text-sm text-muted-foreground">
+            Add this code to your website to enable feedback collection.
+          </p>
+        </div>
+        <CodeBlock text={`<script\n  src="${process.env.NEXT_PUBLIC_APP_URL}/widget.js"\n  data-project-id="${id}"\n></script>`} />
       </div>
 
       {/* Feedback list — nanti diisi setelah API feedback selesai */}

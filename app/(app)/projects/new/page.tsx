@@ -49,7 +49,7 @@ export default function NewProjectPage() {
   }
 
   return (
-    <div className="max-w-md">
+    <div className="max-w-lg">
       <Card>
         <CardHeader>
           <CardTitle>New Project</CardTitle>

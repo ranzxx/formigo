@@ -18,14 +18,22 @@ export async function POST(request: Request) {
     const session = event.data.object;
     const userId = session.metadata?.userId;
 
-    await db
-      .update(user)
-      .set({
-        plan: "pro",
-        stripeCustomerId: session.customer as string,
-        stripeSubscriptionId: session.subscription as string,
-      })
-      .where(eq(user.id, userId!));
+    try {
+      const updateUser = await db
+        .update(user)
+        .set({
+          plan: "pro",
+          stripeCustomerId: session.customer as string,
+          stripeSubscriptionId: session.subscription as string,
+        })
+        .where(eq(user.id, userId!));
+
+      if (!updateUser) {
+        return NextResponse.json({ error: "User not found" }, { status: 404 });
+      }
+    } catch (error) {
+      return NextResponse.json({ error: error }, { status: 500 });
+    }
   }
 
   return NextResponse.json({ received: true });

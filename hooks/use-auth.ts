@@ -15,7 +15,7 @@ export function useAuth() {
           toast.error(ctx.error.message);
         },
         onSuccess: () => {
-          toast.success("Please check your email!");
+          toast.success("welcome to formigo");
           router.push("/dashboard");
         },
       },

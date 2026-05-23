@@ -36,9 +36,9 @@ export default function FeedbackList({ projectId, initialFeedbacks }: Props) {
   }, [projectId]);
 
   return (
-    <div>
+    <div className="flex justify-center text-muted-foreground mt-10 bg-muted p-8 rounded-lg">
       {feedbacks.length === 0 && (
-        <p className="flex justify-center text-muted-foreground">no feedback</p>
+        <p>no feedback</p>
       )}
 
       {feedbacks &&

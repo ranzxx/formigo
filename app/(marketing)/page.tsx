@@ -133,7 +133,9 @@ export default async function LandingPage() {
             features={[
               { text: "1 project", included: true },
               { text: "dashboard access", included: true },
+              { text: "100 feedback/bulan", included: true },
               { text: "unlimited feedback", included: false },
+              { text: "realtime notifications", included: false },
             ]}
             variant={"outline"}
             titleBtn="get started"

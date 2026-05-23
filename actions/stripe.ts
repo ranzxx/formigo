@@ -11,6 +11,8 @@ export async function createCheckoutSession() {
   });
   if (!session) redirect("/login");
 
+  if(!process.env.STRIPE_PRO_PRICE_ID) throw new Error("STRIPE_PRO_PRICE_ID is not defined");
+
   const checkoutSession = await stripe.checkout.sessions.create({
     mode: "subscription",
     payment_method_types: ["card"],
