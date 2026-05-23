@@ -63,7 +63,7 @@ export default async function DashboardPage() {
       {/* Header Section */}
       <div>
         <h1 className="text-3xl font-semibold tracking-tight text-foreground mb-2">Dashboard</h1>
-        <p className="text-muted-foreground">Here's what's happening with your projects.</p>
+        <p className="text-muted-foreground">Here&apos;s what&apos;s happening with your projects.</p>
       </div>
 
       {/* Metrics Cards */}
