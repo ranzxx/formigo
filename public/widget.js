@@ -9,7 +9,7 @@
       position: fixed;
       bottom: 24px;
       right: 24px;
-      background: #1D9E75;
+      background: #111;
       color: white;
       border: none;
       padding: 10px 18px;
@@ -21,7 +21,7 @@
       box-shadow: 0 2px 12px rgba(0,0,0,0.15);
       transition: background 0.2s;
     }
-    #formigo-btn:hover { background: #0F6E56; }
+    #formigo-btn:hover { background: #333; }
     #formigo-popup {
       position: fixed;
       bottom: 72px;
@@ -33,7 +33,7 @@
       width: 300px;
       z-index: 9999;
       font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
     }
     #formigo-popup h4 {
       margin: 0 0 4px;
@@ -58,7 +58,7 @@
       box-sizing: border-box;
       color: #111;
     }
-    #formigo-textarea:focus { border-color: #1D9E75; }
+    #formigo-textarea:focus { border-color: #111; }
     #formigo-footer {
       display: flex;
       justify-content: space-between;
@@ -66,7 +66,7 @@
       margin-top: 10px;
     }
     #formigo-submit {
-      background: #1D9E75;
+      background: #111;
       color: white;
       border: none;
       padding: 7px 14px;
@@ -74,9 +74,10 @@
       font-size: 13px;
       cursor: pointer;
       font-family: inherit;
+      transition: background 0.2s;
     }
-    #formigo-submit:hover { background: #0F6E56; }
-    #formigo-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    #formigo-submit:hover { background: #333; }
+    #formigo-submit:disabled { opacity: 0.5; cursor: not-allowed; }
     #formigo-close {
       background: none;
       border: none;
@@ -93,7 +94,6 @@
   `;
   document.head.appendChild(style);
 
-  // buat tombol
   const btn = document.createElement("button");
   btn.id = "formigo-btn";
   btn.innerText = "Feedback";
@@ -110,7 +110,7 @@
           <h4>share your feedback</h4>
           <p>we'd love to hear what you think</p>
         </div>
-        <button id="formigo-close" aria-label="close">×</button>
+        <button id="formigo-close" aria-label="cl ose">×</button>
       </div>
       <textarea id="formigo-textarea" rows="4" placeholder="what's on your mind?"></textarea>
       <div id="formigo-footer">
@@ -120,12 +120,10 @@
     `;
     document.body.appendChild(popup);
 
-    // close button
     document.getElementById("formigo-close").addEventListener("click", () => {
       popup.remove();
     });
 
-    // submit
     document.getElementById("formigo-submit").addEventListener("click", async () => {
       const textarea = document.getElementById("formigo-textarea");
       const submitBtn = document.getElementById("formigo-submit");
@@ -149,7 +147,7 @@
         popup.innerHTML = `
           <div style="text-align:center;padding:16px 0">
             <div style="font-size:28px;margin-bottom:8px">✓</div>
-            <h4 style="color:#1D9E75;margin:0 0 4px">thanks for your feedback!</h4>
+            <h4 style="margin:0 0 4px;color:#111">thanks for your feedback!</h4>
             <p style="margin:0;font-size:12px;color:#6b7280">we appreciate your input</p>
           </div>
         `;

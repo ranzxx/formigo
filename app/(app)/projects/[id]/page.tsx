@@ -49,7 +49,6 @@ export default async function ProjectDetailPage({
         <CodeBlock text={`<script\n  src="${process.env.NEXT_PUBLIC_APP_URL}/widget.js"\n  data-project-id="${id}"\n></script>`} />
       </div>
 
-      {/* Feedback list — nanti diisi setelah API feedback selesai */}
       <FeedbackList projectId={id} initialFeedbacks={feedbacks} />
     </div>
   );
