@@ -25,7 +25,6 @@ import {
 import { authClient } from "@/lib/auth-client";
 import { useAuth } from "@/hooks/use-auth";
 import Link from "next/link";
-import ThemeToggle from "../marketing/theme-toggle";
 
 export function NavUser() {
   const { isMobile } = useSidebar();

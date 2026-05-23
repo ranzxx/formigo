@@ -145,7 +145,7 @@ export default async function DashboardPage() {
             <div className="flex-1 w-full max-w-full overflow-hidden">
               <h3 className="text-foreground font-medium mb-1">Copy your project ID</h3>
               <p className="text-muted-foreground text-sm">
-                Click the copy button next to your project to get its ID.
+                Click the copy button next to your project to get it&apos;s ID.
               </p>
               <CodeBlock text="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />
             </div>
@@ -161,7 +161,7 @@ export default async function DashboardPage() {
             <div className="flex-1 w-full max-w-full overflow-hidden">
               <h3 className="text-foreground font-medium mb-1">Embed the widget</h3>
               <p className="text-muted-foreground text-sm">
-                Paste this snippet into your site's HTML, replacing the project ID.
+                Paste this snippet into your site&apos;s HTML, replacing the project ID.
               </p>
               <CodeBlock text={`<script\n  src="${process.env.NEXT_PUBLIC_APP_URL}/widget.js"\n  data-project-id="YOUR_PROJECT_ID"\n></script>`} />
             </div>
