@@ -10,6 +10,7 @@ import { redirect } from "next/navigation";
 import { db } from "@/db/drizzle";
 import { project, feedback } from "@/db/schema";
 import { count, eq, and, gte } from "drizzle-orm";
+import MetricsCards from "./metrics-cards";
 
 export default async function DashboardPage() {
   const session = await auth.api.getSession({
@@ -69,49 +70,28 @@ export default async function DashboardPage() {
       {/* Metrics Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {/* Total Projects */}
-        <Card className="bg-card text-card-foreground border-border p-6 flex flex-col gap-4 shadow-sm transition-all hover:bg-muted/50">
-          <div className="flex items-center gap-2 text-muted-foreground">
-            <HugeiconsIcon icon={Folder} size={18} className="text-foreground" />
-            <span className="text-sm font-medium">Total projects</span>
-          </div>
-          <div className="text-3xl font-bold text-foreground tracking-tight">{totalProjects}</div>
-        </Card>
+        <MetricsCards title='Total projects' value={totalProjects} icon={<HugeiconsIcon icon={Folder} size={18} className="text-foreground" />} />
 
         {/* Total Feedback */}
-        <Card className="bg-card text-card-foreground border-border p-6 flex flex-col gap-4 shadow-sm transition-all hover:bg-muted/50">
-          <div className="flex items-center gap-2 text-muted-foreground">
-            <HugeiconsIcon icon={Message} size={18} className="text-foreground" />
-            <span className="text-sm font-medium">Total feedback</span>
-          </div>
-          <div className="text-3xl font-bold text-foreground tracking-tight">{totalFeedback}</div>
-        </Card>
+        <MetricsCards title='Total feedback' value={totalFeedback} icon={<HugeiconsIcon icon={Message} size={18} className="text-foreground" />} />
 
         {/* This Month */}
-        <Card className="bg-card text-card-foreground border-border p-6 flex flex-col gap-4 shadow-sm transition-all hover:bg-muted/50">
-          <div className="flex items-center gap-2 text-muted-foreground">
-            <HugeiconsIcon icon={Analytics} size={18} className="text-foreground" />
-            <span className="text-sm font-medium">This month</span>
-          </div>
-          <div className="text-3xl font-bold text-foreground tracking-tight">{feedbackThisMonth}</div>
-        </Card>
-
+        <MetricsCards title='This month' value={feedbackThisMonth} icon={<HugeiconsIcon icon={Analytics} size={18} className="text-foreground" />} />
+        
         {/* Current Plan */}
-        <Card className="bg-card text-card-foreground border-border p-6 flex flex-col gap-4 shadow-sm relative overflow-hidden group transition-all hover:bg-muted/50">
-          <div className="flex items-center gap-2 text-muted-foreground relative z-10">
-            <HugeiconsIcon icon={Crown} size={18} className="text-foreground" />
-            <span className="text-sm font-medium">Current plan</span>
-          </div>
-          <div className="flex items-end justify-between relative z-10">
-            <div className="text-3xl font-bold text-foreground tracking-tight">{planDisplay}</div>
-            {plan !== 'pro' && (
-              <Badge variant="outline" className="text-xs text-muted-foreground hover:text-foreground hover:bg-muted transition-colors cursor-pointer">
-                Upgrade
-              </Badge>
-            )}
-          </div>
-          {/* Subtle gradient effect on hover for the upgrade card */}
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 via-emerald-500/0 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        </Card>
+        <MetricsCards
+          title="Current plan" 
+          value={planDisplay} 
+          icon={<HugeiconsIcon icon={Crown} size={18} className="text-foreground" />}
+          className="relative overflow-hidden group"
+        >
+          {plan !== 'pro' && (
+            <Badge variant="outline" className="text-xs text-muted-foreground hover:text-foreground hover:bg-muted transition-colors cursor-pointer">
+              Upgrade
+            </Badge>
+          )}
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 via-emerald-500/0 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+        </MetricsCards>
       </div>
 
       {/* Quick Start Section */}

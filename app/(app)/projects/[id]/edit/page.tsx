@@ -12,7 +12,7 @@ export default async function EditProjectPage({ params }: EditProjectPageProps) 
     if(!p) notFound();
 
   return (
-    <div className="max-w-md">
+    <div className="max-w-lg">
       <h2 className="text-2xl font-semibold mb-6">Edit Page</h2>
       <EditProjectForm project={p} />
     </div>
