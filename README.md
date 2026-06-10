@@ -164,7 +164,7 @@ Open [http://localhost:3000](http://localhost:3000).
 The embedded `widget.js` script renders a floating button on the host site. When clicked, it opens a feedback form. On submit, it calls:
 
 ```
-POST https://formigo-app.app/api/feedback
+POST https://formigo-app.vercel.app/api/feedback
 { "projectId": "...", "message": "..." }
 ```
 
