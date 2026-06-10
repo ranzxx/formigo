@@ -10,8 +10,20 @@ Formigo is a SaaS micro-tool that lets developers embed a fully functional feedb
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://typescriptlang.org)
 [![Drizzle ORM](https://img.shields.io/badge/Drizzle-ORM-C5F74F?style=flat-square)](https://orm.drizzle.team)
 [![Neon](https://img.shields.io/badge/Neon-PostgreSQL-00E699?style=flat-square)](https://neon.tech)
+[![Stripe](https://img.shields.io/badge/Stripe-Payments-635BFF?style=flat-square&logo=stripe&logoColor=white)](https://stripe.com)
+[![Pusher](https://img.shields.io/badge/Pusher-Realtime-300D4F?style=flat-square)](https://pusher.com)
+
+🔗 **Live Demo**: [formigo-app.vercel.app](https://formigo-app.vercel.app)
 
 </div>
+
+---
+
+## Screenshots
+
+| Dashboard Page | Widget Preview |
+|---|---|
+| ![Dashboard Page](./public/screenshots/dashboard.avif) | ![Widget Preview](./public/screenshots/widget.avif) |
 
 ---
 
@@ -23,7 +35,7 @@ Add this to your site:
 
 ```html
 <script
-  src="https://formigo.vercel.app/widget.js"
+  src="https://formigo-app.vercel.app/widget.js"
   data-project-id="YOUR_PROJECT_ID"
 ></script>
 ```
@@ -88,7 +100,7 @@ formigo/
 ### 1. Clone and install
 
 ```bash
-git clone https://github.com/yourusername/formigo.git
+git clone https://github.com/ranzxx/formigo.git
 cd formigo
 npm install
 ```
@@ -152,7 +164,7 @@ Open [http://localhost:3000](http://localhost:3000).
 The embedded `widget.js` script renders a floating button on the host site. When clicked, it opens a feedback form. On submit, it calls:
 
 ```
-POST https://formigo.app/api/feedback
+POST https://formigo-app.app/api/feedback
 { "projectId": "...", "message": "..." }
 ```
 
